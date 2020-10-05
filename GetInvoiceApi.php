@@ -8,9 +8,9 @@
     $database = new Database();
     $db = $database->getConnection();
 
-    $readInvoice = new Invoice($db);
+    $invoice = new Invoice($db);
     //$result = $readInvoice->read();
-    $result = $readInvoice->getAllInvoiceInformation();
+    $result = $invoice->getAllInvoiceInformation();
     $numberOfRow = $result->rowCount();
 
     
@@ -23,9 +23,9 @@
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             $invoiceItem = array(
-                'InvoiceID'   => 'InvoiceID',
-                'DocDateTime' => 'DocDateTime',
-                'InvAddress1' => 'InvAddress1',
+                'InvoiceID'   => $InvoiceID,
+                'DocDateTime' => $DocDateTime,
+                'InvAddress1' => $InvAddress1,
             );
 
             array_push($invoice_arr['data'],$invoiceItem);

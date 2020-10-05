@@ -25,7 +25,7 @@
 
         //get all invoice information
         public function getAllInvoiceInformation() {
-            $sqlQuery = "SELECT InvoiceID, DocDateTime, InvAddress1,created FROM "
+            $sqlQuery = "SELECT InvoiceID, DocDateTime, InvAddress1 FROM "
             . $this->db_table."";
 
             $stmt = $this->conn->prepare($sqlQuery);
