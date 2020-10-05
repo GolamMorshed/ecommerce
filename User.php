@@ -41,7 +41,7 @@
             $sqlQuery = "SELECT MemberNo, Name, Password, UserType,
             Address1, Address2, Address3, Address4, PostCode, Race,
             Gender, DOB, PhoneNo, DirectPhoneNo, Email, Photo, Note,
-            CreatedDateTime created FROM " . $this->db_table . "";
+            CreatedDateTime, created FROM " . $this->db_table . "";
 
             $stmt = $this->conn->prepare($sqlQuery);
 

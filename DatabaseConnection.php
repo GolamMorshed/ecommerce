@@ -15,7 +15,7 @@
             } catch(PDOException $exception) {
                 echo "Database could not be connected: " . $exception->getMessage();
             }
-            retunrn $this->conn;
+            return $this->conn;
 
         }
     }
