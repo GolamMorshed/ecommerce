@@ -9,16 +9,12 @@
     $db = $database->getConnection();
 
     $invoice = new Invoice($db);
-    //$result = $readInvoice->read();
     $result = $invoice->getAllInvoiceInformation();
     $numberOfRow = $result->rowCount();
 
-    
-
     if ($numberOfRow > 0) {
-        //initialize an array
         $invoice_arr = array();
-        $invoice_arr['data'] = array();
+        $invoice_arr['body'] = array();
 
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
@@ -28,7 +24,7 @@
                 'InvAddress1' => $InvAddress1,
             );
 
-            array_push($invoice_arr['data'],$invoiceItem);
+            array_push($invoice_arr['body'],$invoiceItem);
         }
         echo json_encode($invoice_arr);
 
